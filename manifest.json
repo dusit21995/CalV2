@@ -1,6 +1,7 @@
+
 {
 "name":"Dusit Load Calculator",
-"short_name":"DusitCalV2",
+"short_name":"DusitCalc",
 "start_url":"./index.html",
 "display":"standalone",
 "background_color":"#0f172a",
