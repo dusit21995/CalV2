@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "dusit-loadcalc-v8";
+const CACHE_NAME = "dusit-loadcalc-v9";
 
 const urlsToCache = [
 "./",

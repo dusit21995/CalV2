@@ -12,7 +12,6 @@ const pf = document.getElementById('pf');
 const phase = parseInt(document.getElementById('phase').value);
 const volt = document.getElementById('volt');
 
-// Auto Voltage
 if(phase === 1){
     volt.value = 220;
 }else{
