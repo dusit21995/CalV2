@@ -4,7 +4,7 @@ background:#081225;
 font-family:Arial;
 color:white;
 margin:0;
-padding:24px;
+padding:10px;
 }
 
 .container{
@@ -15,16 +15,16 @@ margin:auto;
 .header{
 display:flex;
 align-items:center;
-gap:20px;
+gap:14px;
 margin-bottom:20px;
 }
 
 .logo{
-width:90px;
+width:70px;
 }
 
 h1{
-font-size:60px;
+font-size:42px;
 margin:0;
 }
 
@@ -35,7 +35,7 @@ color:#cbd5e1;
 
 .card{
 background:#1e293b;
-padding:24px;
+padding:10px;
 border-radius:22px;
 }
 
@@ -48,30 +48,30 @@ gap:18px;
 label{
 display:block;
 margin-bottom:8px;
-font-size:18px;
+font-size:15px;
 }
 
 input,select{
 width:100%;
-padding:16px;
+padding:10px;
 border:none;
 border-radius:14px;
-font-size:20px;
+font-size:16px;
 box-sizing:border-box;
 }
 
 .button-row{
 display:flex;
-gap:20px;
+gap:14px;
 margin-top:20px;
 }
 
 button{
 background:#2563eb;
 border:none;
-padding:18px 30px;
+padding:12px 20px;
 border-radius:14px;
-font-size:22px;
+font-size:16px;
 color:white;
 cursor:pointer;
 }
@@ -89,20 +89,20 @@ margin-top:20px;
 
 .result-card{
 background:#334155;
-padding:24px;
+padding:10px;
 border-radius:18px;
 text-align:center;
-font-size:24px;
+font-size:15px;
 }
 
 .big{
-font-size:52px;
+font-size:32px;
 font-weight:bold;
 margin-top:10px;
 }
 
 .spacer{
-height:28px;
+height:18px;
 }
 
 table{
@@ -112,10 +112,10 @@ margin-top:20px;
 }
 
 th,td{
-padding:16px;
+padding:10px;
 border-bottom:1px solid #475569;
 text-align:center;
-font-size:18px;
+font-size:15px;
 }
 
 .table-head{
