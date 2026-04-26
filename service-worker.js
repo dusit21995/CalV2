@@ -1,5 +1,4 @@
-
-const CACHE_NAME = "dusit-loadcalc-v9";
+const CACHE_NAME = "dusit-loadcalc-v8";
 
 const urlsToCache = [
 "./",
@@ -7,8 +6,6 @@ const urlsToCache = [
 "./style.css",
 "./script.js",
 "./manifest.json",
-"./icon-192.png",
-"./icon-512.png",
 "./logo.png"
 ];
 

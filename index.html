@@ -1,38 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dusit Load Calculator</title>
-
-<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
-<meta name="theme-color" content="#0f172a">
-
 </head>
-
 <body>
 
 <div class="container">
 
-<div class="title-bar">
-    <img src="logo.png" class="logo">
-    <div>
-        <h1>Dusit Load Calculator</h1>
-        <p class="subtitle">Automation & Industrial Electrical Calculator</p>
-    </div>
+<div class="header">
+<img src="logo.png" class="logo">
+<div>
+<h1>Dusit Load Calculator</h1>
+<p>Automation & Industrial Electrical Calculator</p>
+</div>
 </div>
 
 <div class="card">
-
 <h2>ตั้งค่าการคำนวณ</h2>
 
 <div class="grid">
 
 <div>
 <label>ประเภทโหลด</label>
-<select id="loadType" onchange="updateUI()">
+<select id="loadType" onchange="togglePF()">
 <option value="R">R Load (Resistive)</option>
 <option value="L">L Load (Inductive)</option>
 </select>
@@ -40,7 +33,7 @@
 
 <div>
 <label>ระบบไฟฟ้า</label>
-<select id="phase" onchange="updateUI()">
+<select id="phase" onchange="updateVoltage()">
 <option value="1">1 Phase</option>
 <option value="3">3 Phase</option>
 </select>
@@ -48,26 +41,26 @@
 
 <div>
 <label>ตัวแปร</label>
-<select id="mode" onchange="updateUI()">
-<option value="A">Amp (A)</option>
-<option value="kW">Power (kW)</option>
-<option value="HP">Horsepower (HP)</option>
+<select id="mode" onchange="updateInputLabel()">
+<option value="amp">Amp (A)</option>
+<option value="kw">kW</option>
+<option value="hp">HP</option>
 </select>
 </div>
 
 <div>
 <label>Voltage (V)</label>
-<input type="number" id="volt" value="400">
+<input type="number" id="voltage" value="400">
 </div>
 
 <div>
-<label id="mainInputLabel">Power (kW)</label>
-<input type="number" id="mainInput" value="5">
+<label id="inputLabel">Current (A)</label>
+<input type="number" id="inputValue" value="10">
 </div>
 
 <div>
 <label>Power Factor</label>
-<input type="number" id="pf" value="0.85" step="0.01">
+<input type="number" id="pf" value="1" step="0.01">
 </div>
 
 <div>
@@ -77,48 +70,93 @@
 
 </div>
 
+<div class="button-row">
 <button onclick="calculate()">คำนวณ</button>
+<button onclick="addLoad()">+ เพิ่มโหลด</button>
+</div>
 
 </div>
 
-<div class="results">
+<div class="result-grid">
 
-<div class="result-box">
-<span>Amp</span>
-<strong id="ampResult">0 A</strong>
+<div class="result-card">
+<div>Amp</div>
+<div class="big" id="resultAmp">0.00 A</div>
 </div>
 
-<div class="result-box">
-<span>kW</span>
-<strong id="kwResult">0 kW</strong>
+<div class="result-card">
+<div>kW</div>
+<div class="big" id="resultKw">0.00 kW</div>
 </div>
 
-<div class="result-box">
-<span>HP</span>
-<strong id="hpResult">0 HP</strong>
+<div class="result-card">
+<div>HP</div>
+<div class="big" id="resultHp">0.00 HP</div>
 </div>
 
-<div class="result-box">
-<span>Overload</span>
-<strong id="overloadResult">0 A</strong>
+<div class="result-card">
+<div>Overload</div>
+<div class="big" id="resultOverload">0.00 A</div>
 </div>
 
-<div class="result-box">
-<span>Recommended Cable</span>
-<strong id="cableResult">-</strong>
+<div class="result-card">
+<div>Recommended Cable</div>
+<div class="big" id="resultCable">2.5 mm²</div>
 </div>
 
+</div>
+
+<div class="spacer"></div>
+
+<div class="card">
+<div class="table-head">
+<h2>รายการโหลด</h2>
+<button class="danger" onclick="clearLoads()">ลบทั้งหมด</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Amp</th>
+<th>kW</th>
+<th>HP</th>
+<th>Overload</th>
+<th>Cable</th>
+<th>ลบ</th>
+</tr>
+</thead>
+<tbody id="loadTable"></tbody>
+</table>
+</div>
+
+<div class="spacer"></div>
+
+<div class="card">
+<h2>Load รวม</h2>
+
+<div class="result-grid">
+
+<div class="result-card">
+<div>Total Amp</div>
+<div class="big" id="sumAmp">0.00 A</div>
+</div>
+
+<div class="result-card">
+<div>Total kW</div>
+<div class="big" id="sumKw">0.00 kW</div>
+</div>
+
+<div class="result-card">
+<div>Total HP</div>
+<div class="big" id="sumHp">0.00 HP</div>
+</div>
+
+</div>
 </div>
 
 </div>
 
 <script src="script.js"></script>
-
-<script>
-if ('serviceWorker' in navigator) {
- navigator.serviceWorker.register('service-worker.js');
-}
-</script>
-
 </body>
 </html>
